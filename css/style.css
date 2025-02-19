@@ -1,0 +1,17 @@
+@charset "UTF-8";
+
+:root {
+    --primary-color: red;
+    --secondary-color: blue;
+    --tertiary-color: black;
+}
+
+.carousel-item img {
+    height: 89vh;
+    width: 100vw;
+    object-fit: cover;
+}
+ 
+.carousel-item h2 {
+    font-size: 62px;
+}
