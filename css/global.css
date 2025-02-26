@@ -1,0 +1,146 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: var(--white-color);
+}
+
+:root {
+    font-size: 62.5%;
+    /* Colors */
+    --white-color: #F2F2F2;
+    --primary-color: #BF2489;
+    --secondary-color: #0396A6;
+    --tertiary-color: #36BF98;
+    --forth-color: #F26B1D;
+}
+
+
+/* elements */
+
+ul{
+    margin: 0;
+}
+
+.carousel-item img {
+    height: 89vh;
+    width: 100vw;
+    object-fit: cover;
+}
+ 
+.carousel-item h2 {
+    font-size: 6.2rem;
+}
+
+/* header */
+
+#container-header .content-header, #container-header .navigation{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#container-header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: 2;
+    padding: 2.5rem 5rem;
+    background-color: var(--white-color);
+    /* opacity: 0.5; */
+    color: var(--forth-color);
+    transition: all 300ms ease-in-out;
+    /* box-shadow: 0.1rem 0.1rem 0.2rem var(--forth-color); */
+
+}
+
+#container-header .content-header{
+    margin: 0 auto;
+    width: 100%;
+    max-width: 120rem;
+}
+
+#container-header.container-scrolling{
+    background-color: #36bf9887;
+    color: var(--white-color);
+    padding: 1rem 5rem;
+}
+
+#container-header #logo{
+    width: 12rem;
+    overflow: hidden; /*pensando faço animação*/
+    transition: all 200ms ease-in-out;
+    &:hover{
+        cursor: pointer;
+        transform: scale(1.1);
+    }
+}
+
+#container-header #logo img{
+    width: 100%;
+    height: auto;
+}
+
+#container-header .navigation{
+    gap: 1rem;
+    /* align-items: center; */
+    /* margin: 0; */
+}
+
+#container-header .navigation a{
+    display: inline-block;
+    font-size: 1.8rem;
+    text-decoration: none;
+    padding: 0 clamp(1.5rem, 3vw, 3rem);
+    color: currentColor;
+}
+
+/* menu responsivo */
+
+.button-side-menu{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    
+    width: 5rem;
+    height: 5rem;
+    border: .2rem solid var(--primary-color);
+    border-radius: 1.5rem;
+    
+    cursor: pointer;
+    opacity: 0;
+    transition-delay: 0.5s;
+    transition: all 300ms ease-in-out;
+
+    & + input{
+        display: none;
+        &:checked ~ nav{
+            display: none;
+        }
+    }
+}
+
+/* .button-side-menu + input#button-side:checked */
+
+#container{
+    margin-top: 10.1625rem;
+}
+
+@media (max-width: 700px){
+    .button-side-menu{
+        opacity: 1;
+    }
+
+    .navigation{
+        flex-direction: column;
+    }
+}
