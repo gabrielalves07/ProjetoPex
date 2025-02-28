@@ -1,0 +1,127 @@
+#container-header .content-header, #container-header .navigation{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#container-header{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: 2;
+  padding: 2rem 5rem;
+  background-color: var(--white-color);
+  /* opacity: 0.5; */
+  color: var(--tertiary-color);
+  transition: all 400ms ease-in-out;
+  /* box-shadow: 0.1rem 0.1rem 0.2rem var(--forth-color); */
+
+}
+
+#container-header .content-header{
+  margin: 0 auto;
+  width: 100%;
+  max-width: 120rem;
+}
+
+#container-header.container-scrolling{
+  background-color: #bf248973;
+  color: var(--white-color);
+  padding: 1rem 5rem;
+  & ~ #container{
+      margin-top: 0;
+  }
+}
+
+#container-header #logo{
+  width: 12rem;
+  overflow: hidden;
+  transition: all 200ms ease-in-out;
+  &:hover{
+      cursor: pointer;
+      transform: scale(1.2);
+  }
+}
+
+#container-header #logo img{
+  width: 100%;
+  height: auto;
+}
+
+#container-header .navigation{
+  transition: all 200ms ease-in-out;
+  gap: 1rem;
+}
+
+#container-header .navigation a{
+  display: inline-block;
+  font-size: min(3vw, 1.8rem);
+  text-decoration: none;
+  padding: 0 clamp(1.5rem, 3vw, 3rem);
+  color: currentColor;
+  transition: all 100ms ease-in;
+  &:hover{
+    color: var(--forth-color);
+    text-shadow: .1rem .1rem .5rem var(--forth-color);
+    transform: scale(1.1);
+  }
+}
+
+/* menu responsivo */
+
+.button-side-menu{
+  display: none;
+  z-index: 3;
+  justify-content: center;
+  align-items: center;
+  
+  position: fixed;
+  top: 2rem;
+  right: 2rem;
+  
+  width: 5rem;
+  height: 5rem;
+  border: .2rem solid var(--primary-color);
+  border-radius: 1.5rem;
+  
+  cursor: pointer;
+  transition-delay: 0.5s;
+  transition: all 300ms ease-in-out;
+  & + input{
+      display: none;
+  }
+  & + nav{
+    display: none;
+  }
+}
+
+.button-side-menu + input#button-side:checked ~ #container-header .navbar{
+  width: 100%;
+  left: 0;
+}
+
+@media (max-width: 700px){
+  .button-side-menu{
+    display: flex;
+  }
+
+  .content-header .navbar{
+    border-top: 0.1rem solid #00000027;
+    transition: all 500ms ease-in-out;
+    background-color: var(--white-color);
+    position: absolute;
+    width: 0;
+    left: 100%;
+    top: 100%;
+  }
+
+  .navigation{
+    flex-direction: column;
+  }
+
+  #container{
+    margin-top: 0;
+  }
+}
