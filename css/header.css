@@ -92,9 +92,6 @@
   & + input{
       display: none;
   }
-  & + nav{
-    display: none;
-  }
 }
 
 .button-side-menu + input#button-side:checked ~ #container-header .navbar{
@@ -115,6 +112,7 @@
     width: 0;
     left: 100%;
     top: 100%;
+    padding: 1rem 0;
   }
 
   .navigation{
